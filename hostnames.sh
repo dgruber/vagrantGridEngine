@@ -12,17 +12,15 @@ chown -R vagrant:vagrant /home/vagrant/.ssh
 mkdir -p /root/.ssh
 chmod 700 /root/.ssh
 cp /vagrant/id_rsa.pub /root/.ssh/
+chmod 644 /root/.ssh/id_rsa.pub
 cp /vagrant/id_rsa /root/.ssh/
+chmod 600 /root/.ssh/id_rsa
 cp /vagrant/known_hosts /root/.ssh/known_hosts
 cp /vagrant/authorized_keys /root/.ssh/
 
 # TERM needs to be set for the installer
 echo "export TERM=xterm" >> /root/.bashrc
 echo "export TERM=xterm" >> /home/vagrant/.bashrc
-
-# local execd spooling
-mkdir -p /opt/UGE/spool
-chown -R vagrant:vagrant /opt/UGE
 
 # install libnuma.so
 yum install -y numactl
