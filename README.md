@@ -16,7 +16,7 @@ just run:
 vagrant up
 
 A Vagrant "box" (VM image based on CentOS 6.5 is downloaded from Vagrant repository - but just one time)
-is created is created and 3 virtual machines are created under Virtual Box (master, execd1, execd2).
+is created and 3 virtual machines are created under Virtual Box (master, execd1, execd2).
 
 In order to use your cluster, just type
 
