@@ -18,7 +18,7 @@ export TERM=xterm
 ./inst_sge -m -x -auto ../auto_install_template
 
 # 2.1) Adapt the cluster (/bin/csh is not installed in box)
-source UGE/common/settings.sh
+source /vagrant/UGE/default/common/settings.sh
 # change shell to /bin/sh from /bin/csh
 qconf -mattr queue shell /bin/sh all.q
 
