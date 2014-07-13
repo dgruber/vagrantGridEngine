@@ -8,7 +8,7 @@ Here are the prerequisites:
 - Having free VirtualBox installed
 - Having free Vagrant installed
 - Having git version management installed (or alternative you can copy the files from my github account manually)
-- Having free Grid Engine tar.gz packages (I assume here ge-8.1.5-demo-common.tar.gz and ge-8.1.5-demo-bin-lx-amd64.tar.gz which you can get here for free)
+- Having free Grid Engine tar.gz packages (I assume here ge-8.1.5-demo-common.tar.gz and ge-8.1.5-demo-bin-lx-amd64.tar.gz which you can get for free here: http://www.univa.com/resources/univa-grid-engine-trial.php)
 
 Once you have all the files in a own directory (including the ge-8.1.5... packages!)
 just run:
