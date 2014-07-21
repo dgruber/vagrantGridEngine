@@ -10,9 +10,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  #config.vm.box = "hashicorp/precise32"
-  #config.vm.box = "chef/centos-6.5"
-
   #config.vm.synced_folder ".", "/vagrant", type: "nfs"
   config.vm.synced_folder ".", "/vagrant"
   
@@ -50,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.10"
+  #config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -72,11 +69,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Example for VirtualBox:
   #
   config.vm.provider "virtualbox" do |vb|
-  #   # Don't boot with headless mode
-     vb.gui = false 
-  #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-     vb.customize ["modifyvm", :id, "--memory", "1024"]
+     vb.gui = false
+     vb.cpus = 4
+     vb.customize ["modifyvm", :id, "--memory", "512"]
    end
   #
   # View the documentation for the provider you're using for more

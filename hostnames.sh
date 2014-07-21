@@ -22,8 +22,18 @@ cp /vagrant/authorized_keys /root/.ssh/
 echo "export TERM=xterm" >> /root/.bashrc
 echo "export TERM=xterm" >> /home/vagrant/.bashrc
 
+# install man page command to access UGE man pages
+yum install -y man 
+
 # install libnuma.so
 yum install -y numactl
+
+# install cgroups (use when UGE version >= 8.1.7p5 is going to be installed)
+yum install -y libcgroup
+# make it persistent
+chkconfig --level 3 cgconfig on
+# enable it
+service cgconfig start
 
 # configure hosts file
 mv /etc/hosts /etc/hosts_orig
