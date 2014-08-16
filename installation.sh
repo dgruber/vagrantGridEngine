@@ -11,16 +11,18 @@ mkdir /vagrant/UGE
 cd /vagrant/UGE
 
 # Select which UGE version is going to be installed.
-# When the demo tar.gz verion 8.1.5 exists (can be 
+# When the demo tar.gz verion specifed exists (can be 
 # downloaded from www.univa.com for free), we take
 # them. Otherwise we check if a uge-lx-amd64.tar.gz
 # and a uge-common.gar.gz exits. This I use for for
 # setting a symlink to a specific version I want
 # to install.
 
-if [ -f ../ge-8.1.5-demo-bin-lx-amd64.tar.gz ]; then
-   tar zxvpf ../ge-8.1.5-demo-bin-lx-amd64.tar.gz
-   tar zxvpf ../ge-8.1.5-demo-common.tar.gz
+VERSION="8.1.7p3"
+
+if [ -f ../ge-$VERSION-bin-lx-amd64.tar.gz ]; then
+   tar zxvpf ../ge-$VERSION-bin-lx-amd64.tar.gz
+   tar zxvpf ../ge-$VERSION-common.tar.gz
 elif [ -f ../uge-lx-amd64.tar.gz ]; then
    tar zxvfp ../uge-lx-amd64.tar.gz
    tar zxvfp ../uge-common.tar.gz
