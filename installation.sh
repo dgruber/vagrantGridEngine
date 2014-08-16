@@ -18,7 +18,7 @@ cd /vagrant/UGE
 # setting a symlink to a specific version I want
 # to install.
 
-VERSION="8.1.7p3"
+VERSION="8.1.5-demo"
 
 if [ -f ../ge-$VERSION-bin-lx-amd64.tar.gz ]; then
    tar zxvpf ../ge-$VERSION-bin-lx-amd64.tar.gz
