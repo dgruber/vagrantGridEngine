@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# expected to have the UGE demo tar.gz here in vagrant directory
-# if you don't have then download them from www.univa.com
+# Expected to have the UGE demo tar.gz here in vagrant directory
+# if you don't have then download them from http://www.univa.com
 
 # 1.) Extract UGE packages in subdirectory
 if [ -d /vagrant/UGE ]; then
@@ -18,7 +18,8 @@ cd /vagrant/UGE
 # setting a symlink to a specific version I want
 # to install.
 
-VERSION="8.1.5-demo"
+#VERSION="8.1.5-demo"
+VERSION="8.2.0-demo"
 
 if [ -f ../ge-$VERSION-bin-lx-amd64.tar.gz ]; then
    tar zxvpf ../ge-$VERSION-bin-lx-amd64.tar.gz

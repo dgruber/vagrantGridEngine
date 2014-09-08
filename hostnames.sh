@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# create execd local spool directory
+mkdir -p /UGEexecdspool
+chown -R vagrant:vagrant /UGEexecdspool
+
 # configure passwordless ssh
 mkdir -p /home/vagrant/.ssh
 chmod 700 /home/vagrant/.ssh
