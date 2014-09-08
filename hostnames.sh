@@ -24,7 +24,15 @@ cp /vagrant/authorized_keys /root/.ssh/
 
 # TERM needs to be set for the installer
 echo "export TERM=xterm" >> /root/.bashrc
-echo "export TERM=xterm" >> /home/vagrant/.bashrc
+echo "export TEMR=xterm" >> /home/vagrant/.bashrc
+
+# GO support
+mkdir -p /home/vagrant/go
+mkdir -p /home/vagrant/go/src
+mkdir -p /home/vagrant/go/bin
+mkdir -p /home/vagrant/go/pkg
+chown -R vagrant:vagrant /home/vagrant/go
+echo "export GOPATH=/home/vagrant/go" >> /home/vagrant/.bashrc
 
 # install man page command to access UGE man pages
 yum install -y man 

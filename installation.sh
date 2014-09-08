@@ -49,3 +49,15 @@ echo "source /vagrant/UGE/default/common/settings.sh" >> /root/.bashrc
 # FINISHED
 echo "Installation of UGE finished"
 
+# Install gcc
+echo Installing GCC
+yum install -y gcc
+
+# EPEL package support installation
+cd 
+wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm 
+rpm -ivh epel-release-6-8.noarch.rpm
+
+# GOLANG support 
+yum install -y golang
+
