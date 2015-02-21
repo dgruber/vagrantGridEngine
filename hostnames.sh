@@ -4,6 +4,14 @@
 mkdir -p /UGEexecdspool
 chown -R vagrant:vagrant /UGEexecdspool
 
+# a few more directories for playing with
+mkdir -p /local1
+chown -R vagrant:vagrant /local1
+mkdir -p /local2
+chown -R vagrant:vagrant /local2
+mkdir -p /local3
+chown -R vagrant:vagrant /local3
+
 # configure passwordless ssh
 mkdir -p /home/vagrant/.ssh
 chmod 700 /home/vagrant/.ssh
