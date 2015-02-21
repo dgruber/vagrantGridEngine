@@ -8,9 +8,13 @@ chown -R vagrant:vagrant /UGEexecdspool
 mkdir -p /home/vagrant/.ssh
 chmod 700 /home/vagrant/.ssh
 cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
+chmod 644 /home/vagrant/.ssh/id_rsa.pub
 cp /vagrant/id_rsa /home/vagrant/.ssh/
+chmod 600 /home/vagrant/.ssh/id_rsa
 cp /vagrant/known_hosts /home/vagrant/.ssh/known_hosts
+chmod 600 /home/vagrant/.ssh/known_hosts
 cp /vagrant/authorized_keys /home/vagrant/.ssh/
+chmod 600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant/.ssh
 
 mkdir -p /root/.ssh
@@ -20,7 +24,9 @@ chmod 644 /root/.ssh/id_rsa.pub
 cp /vagrant/id_rsa /root/.ssh/
 chmod 600 /root/.ssh/id_rsa
 cp /vagrant/known_hosts /root/.ssh/known_hosts
+chmod 600 /root/.ssh/known_hosts
 cp /vagrant/authorized_keys /root/.ssh/
+chmod 600 /root/.ssh/authorized_keys
 
 # TERM needs to be set for the installer
 echo "export TERM=xterm" >> /root/.bashrc
