@@ -22,6 +22,8 @@ In order to use your cluster, just type
 
     vagrant ssh master
 
+The password for user vagrant is always "vagrant".
+
 Then you can do qhost, qstat -f, qsub -b y sleep 120, qstat -j <jobid> etc.
 
 Have fun!
