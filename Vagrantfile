@@ -4,6 +4,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.ssh.insert_key = false
   config.vm.synced_folder ".", "/vagrant"
 
   config.vm.define "execd2" do |execd2|
@@ -20,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     execd1.vm.provision "shell", path: "hostnames.sh"
   end
 
-  config.vm.define "master" do |master|
+  config.vm.define "master", primary: true do |master|
     master.vm.box = "bento/centos-6.7"
     master.vm.hostname = "master"
     master.vm.network "private_network", ip: "192.168.10.99"

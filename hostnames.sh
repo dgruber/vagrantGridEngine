@@ -19,8 +19,7 @@ cp /vagrant/id_rsa.pub /home/vagrant/.ssh/
 chmod 644 /home/vagrant/.ssh/id_rsa.pub
 cp /vagrant/id_rsa /home/vagrant/.ssh/
 chmod 600 /home/vagrant/.ssh/id_rsa
-cp /vagrant/known_hosts /home/vagrant/.ssh/known_hosts
-chmod 600 /home/vagrant/.ssh/known_hosts
+
 cp /vagrant/authorized_keys /home/vagrant/.ssh/
 chmod 600 /home/vagrant/.ssh/authorized_keys
 chown -R vagrant:vagrant /home/vagrant/.ssh
@@ -31,8 +30,6 @@ cp /vagrant/id_rsa.pub /root/.ssh/
 chmod 644 /root/.ssh/id_rsa.pub
 cp /vagrant/id_rsa /root/.ssh/
 chmod 600 /root/.ssh/id_rsa
-cp /vagrant/known_hosts /root/.ssh/known_hosts
-chmod 600 /root/.ssh/known_hosts
 cp /vagrant/authorized_keys /root/.ssh/
 chmod 600 /root/.ssh/authorized_keys
 
@@ -47,6 +44,11 @@ mkdir -p /home/vagrant/go/bin
 mkdir -p /home/vagrant/go/pkg
 chown -R vagrant:vagrant /home/vagrant/go
 echo "export GOPATH=/home/vagrant/go" >> /home/vagrant/.bashrc
+
+# csh as it is the default startup shell
+yum install -y csh
+
+yum install -y vim
 
 # install man page command to access UGE man pages
 yum install -y man 

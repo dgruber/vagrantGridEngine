@@ -48,3 +48,5 @@ CSP_LOCATION="Building"
 CSP_ORGA="Organisation"
 CSP_ORGA_UNIT="Organisation_unit"
 CSP_MAIL_ADDRESS="name@yourdomain.com"
+SGE_READER_THREADS="2"
+

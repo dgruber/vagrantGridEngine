@@ -1,5 +1,17 @@
 #!/bin/sh
 
+# add host keys
+ssh-keyscan master > /home/vagrant/.ssh/known_hosts
+ssh-keyscan execd1 >> /home/vagrant/.ssh/known_hosts
+ssh-keyscan execd2 >> /home/vagrant/.ssh/known_hosts
+chmod 0600 /home/vagrant/.ssh/known_hosts
+chown vagrant /home/vagrant/.ssh/known_hosts
+
+ssh-keyscan master > /root/.ssh/known_hosts
+ssh-keyscan execd1 >> /root/.ssh/known_hosts
+ssh-keyscan execd2 >> /root/.ssh/known_hosts
+chmod 0600 /root/.ssh/known_hosts
+
 # Expected to have the UGE demo tar.gz here in vagrant directory
 # if you don't have then download them from http://www.univa.com
 
@@ -19,7 +31,9 @@ cd /vagrant/UGE
 # to install.
 
 #VERSION="8.1.5-demo"
-VERSION="8.2.0-demo"
+#VERSION="8.3.1p6-demo"
+#VERSION="8.3.1p7"
+VERSION="8.4.0"
 
 if [ -f ../ge-$VERSION-bin-lx-amd64.tar.gz ]; then
    tar zxvpf ../ge-$VERSION-bin-lx-amd64.tar.gz
