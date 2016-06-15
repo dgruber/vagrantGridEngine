@@ -71,3 +71,21 @@ echo "192.168.10.101 execd2" >> /etc/hosts
 echo "127.0.0.1 localhost localhost.localdomain localhost4 localhost4.localdomain4" >> /etc/hosts 
 echo "::1       localhost localhost.localdomain localhost6 localhost6.localdomain6" >> /etc/hosts
 
+# install docker
+groupadd docker
+usermod -aG docker vagrant
+
+yum install -y docker
+
+echo "DOCKER_STORAGE_OPTIONS=--storage-opt dm.no_warn_on_loop_devices=true" > /etc/sysconfig/docker-storage
+
+service docker start
+
+# NFS
+mkdir /nfs
+chown vagrant /nfs
+echo "192.168.10.99:/nfs /nfs nfs rw 0 0" >> /etc/fstab
+
+
+
+

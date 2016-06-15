@@ -33,7 +33,7 @@ cd /vagrant/UGE
 #VERSION="8.1.5-demo"
 #VERSION="8.3.1p6-demo"
 #VERSION="8.3.1p7"
-VERSION="8.4.0"
+VERSION="8.4.0-demo"
 
 if [ -f ../ge-$VERSION-bin-lx-amd64.tar.gz ]; then
    tar zxvpf ../ge-$VERSION-bin-lx-amd64.tar.gz
@@ -74,4 +74,11 @@ rpm -ivh epel-release-6-8.noarch.rpm
 
 # GOLANG support 
 yum install -y golang
+
+echo "/nfs   192.168.10.0/24(rw,async)" >> /etc/exports
+echo "portmap: 192.168.10.0/24" >> /etc/hosts.allow
+service nfs restart
+service nfs-server restart
+ssh execd1 mount /nfs
+ssh execd2 mount /nfs
 
