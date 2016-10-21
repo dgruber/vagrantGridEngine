@@ -75,9 +75,10 @@ echo "::1       localhost localhost.localdomain localhost6 localhost6.localdomai
 groupadd docker
 usermod -aG docker vagrant
 
-yum install -y docker
+#Later docker packages on redhat break UGE Docker implementation
+yum install -y docker-1.10.3-44.el7.centos
 
-echo "DOCKER_STORAGE_OPTIONS=--storage-opt dm.no_warn_on_loop_devices=true" > /etc/sysconfig/docker-storage
+#echo "DOCKER_STORAGE_OPTIONS=--storage-opt dm.no_warn_on_loop_devices=true" > /etc/sysconfig/docker-storage
 
 service docker start
 
