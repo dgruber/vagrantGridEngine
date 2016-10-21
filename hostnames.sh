@@ -35,7 +35,7 @@ chmod 600 /root/.ssh/authorized_keys
 
 # TERM needs to be set for the installer
 echo "export TERM=xterm" >> /root/.bashrc
-echo "export TEMR=xterm" >> /home/vagrant/.bashrc
+echo "export TERM=xterm" >> /home/vagrant/.bashrc
 
 # GO support
 mkdir -p /home/vagrant/go
